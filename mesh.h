@@ -34,7 +34,7 @@ class Mesh {
 		int size() { return Triangles.size(); }
 
 		//拡大・縮小
-		void scale(const Vec3& s)
+		Mesh& scale(const Vec3& s)
 		{
 			//スケール値が0なら1にする
 			double x, y, z;
@@ -50,10 +50,11 @@ class Mesh {
 				v3 = t.v3 * _s;
 				t = {v1, v2, v3};
 			}
+			return *this;
 		}
 
 		//移動
-		void translate(const Vec3& trans)
+		Mesh& translate(const Vec3& trans)
 		{
 			Vec3 v1, v2, v3;
 			for (auto& t : Triangles) {
@@ -62,10 +63,11 @@ class Mesh {
 				v3 = t.v3 + trans;
 				t = {v1, v2, v3};
 			}
+			return *this;
 		}
 
 		//回転
-		void rotate(double deg, const Vec3& n)
+		Mesh& rotate(double deg, const Vec3& n)
 		{
 			Vec3 v1, v2, v3;
 			for (auto& t : Triangles) {
@@ -74,14 +76,16 @@ class Mesh {
 				v3 = rodrigues_rotate(t.v3, deg, n);
 				t = {v1, v2, v3};
 			}
+			return *this;
 		}
 
 		//法線の反転
-		void flip_normal()
+		Mesh& flip_normal()
 		{
 			for( auto& t : Triangles) {
 				t.flip_normal();
 			}
+			return *this;
 		}
 
 		//STLファイルの書き出し
