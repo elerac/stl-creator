@@ -10,7 +10,7 @@
 
 int main() {
 	Mesh mesh_src;
-	mesh_src.stl_read("cube-ascii.stl");
+	mesh_src = stl_read("cube-ascii.stl");
 	
 	Mesh mesh_dst;
 
@@ -23,7 +23,7 @@ int main() {
 
 				Mesh mesh_dup = mesh_src;
 				mesh_dup.translate(Vec3(x*PITCH, y*PITCH, z*PITCH));
-				mesh_dst = mesh_dst + mesh_dup;
+				mesh_dst += mesh_dup;
 			}
 		}
 	}
