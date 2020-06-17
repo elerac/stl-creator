@@ -1,6 +1,8 @@
 # STL creator
 create and edit STL files in C++ (Version of C++ is 11 or higher.)
 
+You can see how to use STL-creator from [here](https://www.slideshare.net/secret/LV0MNJfI1xszLl).
+
 ```cpp
 #include "vec3.h"
 #include "triangle.h"
