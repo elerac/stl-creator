@@ -1,5 +1,5 @@
 # STL creator
-create and edit STL files in C++
+create and edit STL files in C++ (Version of C++ is 11 or higher.)
 
 ```cpp
 #define "vec3.h"
