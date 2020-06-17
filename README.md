@@ -2,9 +2,9 @@
 create and edit STL files in C++ (Version of C++ is 11 or higher.)
 
 ```cpp
-#define "vec3.h"
-#define "triangle.h"
-#define "mesh.h"
+#include "vec3.h"
+#include "triangle.h"
+#include "mesh.h"
 
 int main() {
   Vec3 p1(0, 0, 1), p2(1, 0, 1), p3(1, 1, 1), p4(0, 1, 1);
